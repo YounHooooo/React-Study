@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ProductPage from './pages/ProductPage';
+import Counter from './components/Counter';
+import Input from './components/Input';
+import ListComponent from './components/ListComponent';
+import Counters from './components/Counters';
+import TestCode from './study/TestCode';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <TestCode />
   </React.StrictMode>
 );
 
