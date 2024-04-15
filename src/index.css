@@ -142,3 +142,8 @@ body {
   margin-bottom: 16px;
   cursor: pointer;
 }
+
+.bottomButton:disabled {
+  background-color: #dadada;
+  color:white;
+}
