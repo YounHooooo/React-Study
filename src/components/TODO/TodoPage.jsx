@@ -7,6 +7,7 @@ export default function TodoPage() {
         <TodoCard />
         <TodoCard />
         <Input />
+        <Button />
     </div>
   )
 }

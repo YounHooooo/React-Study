@@ -9,11 +9,12 @@ import Input from './components/Input';
 import ListComponent from './components/ListComponent';
 import Counters from './components/Counters';
 import TestCode from './study/TestCode';
+import LoginPage from './pages/LoginPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TestCode />
+    <LoginPage />
   </React.StrictMode>
 );
 

@@ -23,7 +23,7 @@ export default function TestCode() {
     }
 
     const decreaseCountRef = () => {
-        countRef.current = countRef.current -1;
+        countRef.current = countRef.current - 1;
         console.log('Ref: ', countRef.current);
 
     }
@@ -48,3 +48,4 @@ export default function TestCode() {
         </>
     )
 }
+
