@@ -1,0 +1,8 @@
+/* PullPageContainer.css */
+.pullpage-container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    display: flex;
+    flex-direction: column;
+  }

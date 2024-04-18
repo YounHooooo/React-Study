@@ -68,14 +68,10 @@ body {
   width: 100%;
   max-width: 500px;
   padding: 0 20px;
-
   left: 50%;
   transform: translate(-50%, 0);
-
   background-color: #F7F7F7;
-
   overflow: hidden;
-  
   display: flex;
   flex-direction: column;
 }

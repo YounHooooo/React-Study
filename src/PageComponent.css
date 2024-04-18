@@ -1,0 +1,14 @@
+/* PageComponent.css */
+.pullpage-page {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+  }
+  
+  .active {
+    color: red; /* 활성화된 페이지의 스타일 */
+  }
+  

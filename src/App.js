@@ -32,27 +32,53 @@
 //   }
 // }
 
+// // export default App;
+
+// import Movie from "./components/Movie";
+// import { dummy } from "./movieDummy";
+
+// function App() {
+//   return (
+//     <div>
+//       <div className="app-container">
+//         {dummy.results.map((item) => {
+//           return (
+//             <Movie
+//               title={item.title}
+//               poster_path={item.poster_path}
+//               vote_average={item.vote_average}
+//             />
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+
 // export default App;
 
-import Movie from "./components/Movie";
-import { dummy } from "./movieDummy";
+import React from 'react';
+import PullpageContainer from './PullpageContainer';
+import PageComponent from './PageComponent';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <div className="app-container">
-        {dummy.results.map((item) => {
-          return (
-            <Movie
-              title={item.title}
-              poster_path={item.poster_path}
-              vote_average={item.vote_average}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <PullpageContainer>
+      <PageComponent>
+        <h1 style={{backgroundColor : "blue"}}>Page 1</h1>
+      </PageComponent>
+      <PageComponent>
+        <h1 style={{backgroundColor : "green"}}>Page 2</h1>
+      </PageComponent>
+      <PageComponent>
+        <h1 style={{backgroundColor : "yellow"}}>Page 3</h1>
+      </PageComponent>
+      <PageComponent>
+        <h1 style={{backgroundColor : "orange"}}>Page 4</h1>
+      </PageComponent>
+    </PullpageContainer>
   );
-}
+};
 
 export default App;
