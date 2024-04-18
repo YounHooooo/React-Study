@@ -17,3 +17,4 @@ export default function Movie({ title, poster_path, vote_average }) {
         </div>
     );
 }
+
