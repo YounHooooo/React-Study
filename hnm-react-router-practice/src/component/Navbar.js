@@ -38,7 +38,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div>
+        <div className="search-area">
           <FontAwesomeIcon icon={faSearch} />
           <input type="text" />
         </div>
