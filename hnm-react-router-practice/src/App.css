@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+  cursor: pointer;
 }
 
 .nav-section {
@@ -28,7 +29,7 @@
 }
 
 .product-img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .footer-wrap {
@@ -52,4 +53,25 @@
 .search-area input {
   border: none;
   border-bottom: 1px solid #ccc;
+  padding: 5px;
+  outline: none;
+}
+
+.login-button svg {
+  padding-top: 4px;
+  padding-right: 5px;
+}
+
+.product-detail-img {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.select-box {
+  border-radius: 5px;
+}
+
+.select-box:hover {
+  background-color: black;
+  color: white;
 }
