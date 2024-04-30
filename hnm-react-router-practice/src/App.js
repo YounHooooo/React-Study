@@ -36,7 +36,7 @@ function App() {
           element={<PrivateRouter authenticate={authenticate} />}
         />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
