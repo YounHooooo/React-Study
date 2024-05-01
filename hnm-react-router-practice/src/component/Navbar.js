@@ -1,62 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const menuList = [
     "여성",
     "Divided",
     "남성",
     "신생아/유아",
     "아동",
-    "H&M Home",
+    "H&M HOME",
     "Sale",
     "지속가능성",
   ];
-  const Navigate = useNavigate();
-
-  const goToLogin = () => {
-    Navigate("/Login");
-  };
-
-  const search = (event) => {
+  let [width, setWidth] = useState(0);
+  let navigate = useNavigate();
+  const onCheckEnter = (event) => {
     if (event.key === "Enter") {
-      // 입력한 검색어를 읽어와서
-
-      let keyword = event.target.value;
-
-      // url을 바꿔준다
-      Navigate(`/?q=${keyword}`);
+      navigate(`?q=${event.target.value}`);
     }
   };
-
   return (
     <div>
-      <div>
-        <div className="login-button" onClick={goToLogin}>
-          <FontAwesomeIcon icon={faUser} />
-          <div>로그인</div>
+      <div className="side-menu" style={{ width: width }}>
+        <button className="closebtn" onClick={() => setWidth(0)}>
+          &times;
+        </button>
+        <div className="side-menu-list" id="menu-list">
+          {menuList.map((menu, index) => (
+            <button key={index}>{menu}</button>
+          ))}
+        </div>
+      </div>
+      <div className="nav-header">
+        <div className="burger-menu hide">
+          <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} />
+        </div>
+        <div>
+          {authenticate ? (
+            <div onClick={() => setAuthenticate(false)}>
+              <FontAwesomeIcon icon={faUser} />
+              <span style={{ cursor: "pointer" }}>로그아웃</span>
+            </div>
+          ) : (
+            <div onClick={() => navigate("/login")}>
+              <FontAwesomeIcon icon={faUser} />
+              <span style={{ cursor: "pointer" }}>로그인</span>
+            </div>
+          )}
         </div>
       </div>
 
-      <div className="nav-section">
-        <img
-          width={100}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Ve9KTXh9baAxKg-AVXoZa0N1pFUoqYdBipZni5C6f58wKUlNhg0-ef5gjGuSZuHfdfs&usqp=CAU"
-        />
+      <div className="nav-logo">
+        <Link to="/">
+          <img
+            width={100}
+            src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-1999-present.jpg"
+          />
+        </Link>
       </div>
-
-      <div className="menu-area">
-        <ul className="menu-list">
-          {menuList.map((menu) => (
-            <li>{menu}</li>
+      <div className="nav-menu-area">
+        <ul className="menu">
+          {menuList.map((menu, index) => (
+            <li key={index}>
+              <a href="#">{menu}</a>
+            </li>
           ))}
         </ul>
 
-        <div className="search-area">
+        <div className="search-box">
           <FontAwesomeIcon icon={faSearch} />
-          <input type="text" onKeyPress={(event) => search(event)} />
+          <input type="text" placeholder="제품검색" onKeyPress={onCheckEnter} />
         </div>
       </div>
     </div>

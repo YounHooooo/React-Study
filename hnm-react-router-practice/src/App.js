@@ -21,7 +21,7 @@ import PrivateRouter from "./route/PrivateRouter";
 
 function App() {
   const [authenticate, setAuthenticate] = useState(false);
-  useEffect(() => {}, [authenticate]);
+  // useEffect(() => {}, [authenticate]);
   return (
     <div>
       <Navbar />

@@ -1,42 +1,60 @@
 import React, { useEffect, useState } from "react";
-import "../App.css";
 import { useParams } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Dropdown, Alert } from "react-bootstrap";
 
 const ProductDetail = () => {
-  let { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const { id } = useParams();
   const getProductDetail = async () => {
+    setLoading(true);
     let url = `http://localhost:5000/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
+    setLoading(false);
+
     setProduct(data);
   };
   useEffect(() => {
     getProductDetail();
   }, []);
-
+  if (loading || product == null) return <h1>Loading</h1>;
   return (
-    <Container>
-      <Row>
-        <Col className="product-detail-img">
-          <img src={product?.img} />
-        </Col>
-        <Col>
-          <div>{product?.title}</div>
-          <div>{product?.price}</div>
-          <div>{product?.choice == true ? "Conscious choice" : ""}</div>
-          <select className="select-box" title="asd">
-            <option value="none">사이즈 선택</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-          </select>
-          <div>
-            <button>추가</button>
-          </div>
-        </Col>
-      </Row>
+    <Container className="product-detail-card">
+      {error ? (
+        <Alert variant="danger" className="text-center">
+          {error}
+        </Alert>
+      ) : (
+        <Row>
+          <Col xs={12} md={6} className="product-detail-img">
+            <img src={product.img} />
+          </Col>
+          <Col xs={12} md={6}>
+            <div className="product-info">{product.title}</div>
+            <div className="product-info">₩ {product.price}</div>
+            <div className="choice">
+              {product.choice ? "Conscious choice" : ""}
+            </div>
+            <Dropdown className="drop-down">
+              <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">
+                사이즈 선택
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                {product?.size.length > 0 &&
+                  product.size.map((item) => (
+                    <Dropdown.Item href="#/action-1">{item}</Dropdown.Item>
+                  ))}
+              </Dropdown.Menu>
+            </Dropdown>
+            <Button variant="dark" className="add-button">
+              추가
+            </Button>
+          </Col>
+        </Row>
+      )}
     </Container>
   );
 };

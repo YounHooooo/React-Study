@@ -1,35 +1,53 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../component/ProductCard";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col, Container, Alert } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 
 const ProductAll = () => {
-  const [productList, setProductList] = useState([]);
+  let [products, setProducts] = useState([]);
   const [query, setQuery] = useSearchParams();
+  let [error, setError] = useState("");
+
   const getProducts = async () => {
-    let searchQuery = query.get("q") || "";
-    let url = `http://localhost:5000/products?q=${searchQuery}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    setProductList(data);
+    try {
+      let keyword = query.get("q") || "";
+      let searchQuery = query.get("q") || "";
+      let url = `http://localhost:5000/products?q=${searchQuery}`;
+      let response = await fetch(url);
+      let data = await response.json();
+      if (data.length < 1) {
+        if (keyword !== "") {
+          setError(`${keyword}와 일치하는 상품이 없습니다`);
+        } else {
+          throw new Error("결과가 없습니다");
+        }
+      }
+      setProducts(data);
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   useEffect(() => {
     getProducts();
   }, [query]);
-
   return (
-    <div>
-      <Container>
+    <Container>
+      {error ? (
+        <Alert variant="danger" className="text-center">
+          {error}
+        </Alert>
+      ) : (
         <Row>
-          {productList.map((menu) => (
-            <Col lg={3}>
-              <ProductCard item={menu} />
-            </Col>
-          ))}
+          {products.length > 0 &&
+            products.map((item) => (
+              <Col md={3} sm={12} key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
         </Row>
-      </Container>
-    </div>
+      )}
+    </Container>
   );
 };
 
