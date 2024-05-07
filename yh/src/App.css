@@ -1,0 +1,48 @@
+.img-logo {
+  justify-content: center;
+  display: flex;
+}
+
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 25px;
+}
+
+.login-button svg {
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+}
+
+.menu-list li {
+  padding: 10px;
+}
+
+.menu-area {
+  justify-content: center;
+  display: flex;
+}
+
+.search-area {
+  align-content: center;
+  margin: 25px;
+  display: flex;
+}
+
+.search-area svg {
+  margin-right: 10px;
+}
+
+/* .search-area input {
+  margin-left: auto;
+} */
+
+.product-detail {
+  display: flex;
+  justify-content: center;
+}
