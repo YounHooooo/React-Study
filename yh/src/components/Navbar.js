@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
 const Navbar = () => {
-  const menuList = ["여성", "남성", "신생아/유아", "아동"];
+  const menuList = ["Best", "Men", "Women", "Acc"];
 
   const navigate = useNavigate();
 

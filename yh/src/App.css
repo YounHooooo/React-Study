@@ -17,10 +17,13 @@
 .menu-list {
   display: flex;
   list-style: none;
+  padding-left: 0px;
 }
 
 .menu-list li {
-  padding: 10px;
+  padding: 14px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .menu-area {
@@ -30,13 +33,13 @@
 
 .search-area {
   align-content: center;
-  margin: 25px;
   display: flex;
+  padding-top: 7px;
 }
 
 .search-area svg {
   margin-right: 10px;
-  margin-top: 5px;
+  margin-top: 12px;
 }
 
 .search-area input {
@@ -50,6 +53,7 @@
   padding: 0 0 0 5px;
   line-height: 35px;
   height: 35px;
+  outline: none;
 }
 
 .product-detail {
@@ -57,10 +61,13 @@
   justify-content: center;
 }
 
-.card-wrap :hover {
-  transform: scale(1.05);
+.col-lg-3 :hover {
+  transform: scale(1.02);
 }
-
+.card-wrap {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
 .card-wrap img {
   width: 100%;
 }
@@ -69,6 +76,35 @@
   cursor: pointer;
 }
 
+.login-wrap {
+  width: 700px;
+}
+
 .img-logo {
   cursor: pointer;
+}
+
+.card-content {
+  line-height: 1.8;
+}
+
+/** 푸터 **/
+footer {
+  border-top: 1px solid #e4e4e4;
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  justify-content: center;
+  display: flex;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #545e6f;
+  margin: 0.6rem;
+}
+
+/** 전체 페이지 **/
+.wrapper {
+  height: 100vh;
 }
