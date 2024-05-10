@@ -79,6 +79,46 @@
       "new": false,
       "soldout": false,
       "size": ["S", "M", "L"]
+    },
+    {
+      "id": 8,
+      "img": "https://cdn3-aka.makeshop.co.kr/shopimages/jason006/0790060034303.jpg?1714010494",
+      "title": "스티치 카라 스트링 점퍼",
+      "price": "31000",
+      "choice": false,
+      "new": false,
+      "soldout": false,
+      "size": ["S", "M", "L"]
+    },
+    {
+      "id": 9,
+      "img": "https://cdn3-aka.makeshop.co.kr/shopimages/jason006/0790030042403.jpg?1714363238",
+      "title": "실버 버클 심플 벨트",
+      "price": "9000",
+      "choice": false,
+      "new": false,
+      "soldout": false,
+      "size": ["S", "M", "L"]
+    },
+    {
+      "id": 10,
+      "img": "https://cdn3-aka.makeshop.co.kr/shopimages/jason006/0790090016713.gif?1711605745",
+      "title": "펑키 자수 볼캡",
+      "price": "18500",
+      "choice": false,
+      "new": false,
+      "soldout": false,
+      "size": ["S", "M", "L"]
+    },
+    {
+      "id": 11,
+      "img": "https://cdn3-aka.makeshop.co.kr/shopimages/jason006/0790090016443.jpg?1715328334",
+      "title": "와이드 린넨 보넷 모자",
+      "price": "16700",
+      "choice": false,
+      "new": false,
+      "soldout": false,
+      "size": ["S", "M", "L"]
     }
   ]
 }

@@ -17,11 +17,26 @@ const Navbar = () => {
   const goToHome = () => {
     navigate("/");
   };
+
+  const goToMyShop = () => {
+    navigate("/shop");
+  };
+
+  const search = (event) => {
+    if (event.key === "Enter") {
+      let keyword = event.target.value;
+      navigate(`/?q=${keyword}`);
+    }
+  };
+
   return (
     <div>
       <div className="login-button" onClick={goToLogin}>
         <FontAwesomeIcon icon={faUser} />
         <div>로그인</div>
+      </div>
+      <div className="my-shop-button" onClick={goToMyShop}>
+        내상점
       </div>
 
       <div className="img-logo" onClick={goToHome}>
@@ -41,7 +56,7 @@ const Navbar = () => {
 
           <div className="search-area">
             <FontAwesomeIcon icon={faSearch} />
-            <input type="text" />
+            <input type="text" onKeyPress={(event) => search(event)} />
           </div>
         </div>
       </Container>

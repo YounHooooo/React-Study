@@ -108,3 +108,29 @@ footer {
 .wrapper {
   height: 100vh;
 }
+
+.my-shop-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.product-img {
+  width: 450px;
+}
+
+.product-img-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-title {
+  font-size: 20px;
+}
+
+.product-price {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
