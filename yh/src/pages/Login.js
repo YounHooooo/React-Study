@@ -10,7 +10,7 @@ const Login = ({ setAuthenticate }) => {
     navigate("/");
   };
   return (
-    <Container className="login-wrap">
+    <Container style={{ width: "500px" }}>
       <Form onSubmit={(event) => loginUser(event)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>

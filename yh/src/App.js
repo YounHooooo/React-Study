@@ -10,12 +10,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import PrivateRoute from "./route/PrivateRoute";
 
+// 푸터 하단고정
+// 디테일 페이지 좀 더 꾸미기
+// 카테고리에 맞게 상품 보이기
+
 function App() {
   const [authenticate, setAuthenticate] = useState(false);
   useEffect(() => {}, [authenticate]);
+
   return (
     <div className="wrapper">
-      <Navbar />
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route

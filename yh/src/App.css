@@ -1,3 +1,7 @@
+.loading {
+  justify-content: center;
+  display: flex;
+}
 .img-logo {
   justify-content: center;
   display: flex;
@@ -18,12 +22,37 @@
   display: flex;
   list-style: none;
   padding-left: 0px;
+  font-size: 16pt;
+  text-align: center; /*중앙정렬*/
+  padding: 20px 0 20px 0;
+}
+
+.menu-list a {
+  font-family: "Noto Serif KR", serif;
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  line-height: 40px;
+}
+
+.menu-list a:after {
+  display: block;
+  width: 70px;
+  content: "";
+  border-bottom: solid 2px black;
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+}
+.menu-list a:hover:after {
+  transform: scaleX(1);
 }
 
 .menu-list li {
   padding: 14px;
   cursor: pointer;
   font-size: 18px;
+  display: inline-block;
+  padding: 0 40px 0 0;
 }
 
 .menu-area {
@@ -34,7 +63,7 @@
 .search-area {
   align-content: center;
   display: flex;
-  padding-top: 7px;
+  padding-top: 17px;
 }
 
 .search-area svg {
@@ -76,10 +105,6 @@
   cursor: pointer;
 }
 
-.login-wrap {
-  width: 700px;
-}
-
 .img-logo {
   cursor: pointer;
 }
@@ -98,7 +123,7 @@ footer {
   display: flex;
 }
 
-.footer-copyright {
+.footer-content {
   font-size: 0.9rem;
   color: #545e6f;
   margin: 0.6rem;
@@ -117,7 +142,7 @@ footer {
 }
 
 .product-img {
-  width: 450px;
+  width: 420px;
 }
 
 .product-img-wrap {
@@ -133,4 +158,50 @@ footer {
   font-size: 18px;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.product-detail-button-wrap {
+  display: grid !important;
+  gap: 0.8rem !important;
+}
+
+.buy-button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 32vw;
+  height: 5vh;
+  border-style: none;
+}
+
+.bag-button {
+  border-radius: 10px;
+  width: 32vw;
+  height: 5vh;
+  border-style: none;
+}
+
+.size-button {
+  margin-bottom: 15px;
+  height: 150px;
+}
+
+.menu:hover {
+  transform: scale(1.1);
+}
+
+.card-content-new {
+  background-color: black;
+  color: yellow;
+  width: 33px;
+  animation: blink-animation 1s infinite alternate;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

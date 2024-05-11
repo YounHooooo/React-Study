@@ -14,8 +14,10 @@ const ProductCard = ({ item }) => {
         <div>{item?.choice == true ? "Conscious choice" : ""}</div>
         <strong>{item?.title}</strong>
         <div>₩{item?.price}</div>
-        <div>{item?.new == true ? "신제품" : ""}</div>
-        <strong>{item?.soldout == true ? "soldout" : ""}</strong>
+        <div className="card-content-new">{item?.new == true ? "New" : ""}</div>
+        <strong style={{ color: "red" }}>
+          {item?.soldout == true ? "soldout" : ""}
+        </strong>
       </div>
     </div>
   );

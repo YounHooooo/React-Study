@@ -10,7 +10,6 @@ const ProductDetail = () => {
     let url = `http://localhost:5000/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
     setProduct(data);
   };
   useEffect(() => {
@@ -26,7 +25,7 @@ const ProductDetail = () => {
           <Col>
             <strong className="product-title">{product?.title}</strong>
             <div className="product-price">{product?.price} 원</div>
-            <Dropdown>
+            <Dropdown className="size-button">
               <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                 사이즈 선택
               </Dropdown.Toggle>
@@ -37,6 +36,10 @@ const ProductDetail = () => {
                 <Dropdown.Item href="#/size-L">L</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+            <div className="product-detail-button-wrap">
+              <button className="buy-button">바로 구매하기</button>
+              <button className="bag-button">장바구니 추가</button>
+            </div>
           </Col>
         </Row>
       </Container>

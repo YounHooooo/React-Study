@@ -9,7 +9,6 @@ const ProductAll = () => {
   const [query, setQuery] = useSearchParams();
   const getProducts = async () => {
     let searchQuery = query.get("q") || "";
-    console.log("쿼리값은?", searchQuery);
     let url = `http://localhost:5000/products?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
